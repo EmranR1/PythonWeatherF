@@ -9,3 +9,8 @@ def weather(city):
     f'&aqs=chrome.0.35i39l2j0l4j46j69i60.6128j1j7&sourceid='
     f'chrome&ie=UTF-8',headers=headers)
     soup = BeautifulSoup(res.text,'html.parser')
+    location = soup.select('#wob_loc')[0].getText().strip()
+    time = soup.select('#wob_dts')[0].getText().strip()
+    info = soup.select('#wob_dc')[0].getText().strip()
+    weather = soup.select('#wob_tm')[0].getText().strip()
+    print("Searching in google......\n")
