@@ -14,7 +14,7 @@ def weather(city):
     info = soup.select('#wob_dc')[0].getText().strip()
     weather = soup.select('#wob_tm')[0].getText().strip()
     print("Searching in google......\n")
-    
+
     soup = BeautifulSoup(res.text,'html.parser')
     location = soup.select('#wob_loc')[0].getText().strip()
     time = soup.select('#wob_dts')[0].getText().strip()
@@ -37,4 +37,14 @@ def weather(city):
     city=city+" weather"
 
     
+    weather(city)
+
+    #enter the city name
+    print("enter the city name")
+    city=input()
+
+    #Concatenating the city name and weather 
+    city=city+" weather"
+
+    #passing the city object to weather function
     weather(city)
